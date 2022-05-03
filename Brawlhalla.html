@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="bödvar16x16.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawlhalla Legend helper</title>
+    
+</head>
+<body>
+    <div class="column"></div>
+    
+  <div class="content"></div>
+<p>Please choose one weapon as well as a stat specification!</p>
+<divs class ="container"></divs>
+<select name="weapons" id="weapons">
+  <option value="scythe">Scythe</option>
+  <option value="orb">Orb</option>
+  <option value="hammer">Hammer</option>
+  <option value="rocketlance">Rocketlance</option>
+  <option value="katars">Katars</option>
+  <option value="sword">Sword</option>
+  <option value="greatsword">Greatsword</option>
+  <option value="spear">Spear</option>
+  <option value="canon">Canon</option>
+  <option value="guns">Guns</option>
+  <option value="bow">Bow</option>
+  <option value="bow">Axe</option>
+  <option value="gloves">Gloves</option>
+
+</select>
+<!--de följande funktioner skapar två dropdown menus, en för vapen och en för stat-->
+<select name="stats" id="stats">
+  <option value= "highDmgWeapon" id="highDmgweapon">High Damage</option>
+  <option value= "mediumDmgWeapon" id="mediumDmgweapon">Medium Damage</option>
+  <option value= "lowDmgWeapon" id="lowDmgweapon">Low Damage</option>
+  <option value= "highDefWeapon" id="highDefweapon">High Defense</option>
+  <option value= "mediumDefWeapon" id="mediumDefweapon">Medium Defense</option>
+  <option value= "lowDefWeapon" id="lowDefweapon">Low Defense</option>
+  <option value= "highDxWeapon" id="highDxweapon">High Dexterity</option>
+  <option value= "mediumDxWeapon" id="mediumDxweapon">Medium Dexterity</option>
+  <option value= "lowDxWeapon" id="lowDxweapon">Low Dexterity</option>
+  <option value= "highSpWeapon" id="highSpweapon">High Speed</option>
+  <option value= "mediumSpWeapon" id="mediumSpweapon">Medium Speed</option>
+  <option value= "lowSpWeapon" id="lowSpweapon">Low speed</option>
+</select>
+<p id="Legend"></p>
+<!--med id ska jag ta fram functionnen och sedan lägga in value av den första droppdownen som 
+variabeln, då den första är vapen-->
+
+<Button id="functionButton">Calculate my optimal legend</Button>
+<script src="brawlhalla 1.1.js"></script>
+</body>
+</html>
