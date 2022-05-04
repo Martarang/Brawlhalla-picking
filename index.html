@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="icon" type="image/x-icon" href="./images/Bödvar16x16.png.png">
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark light">
-    <title>Brawlhalla Legend helper</title>
-    
-</head>
-<body>
-    <div class="column"></div>
-    
-  <div class="content"></div>
-<p>Please choose one weapon as well as a stat specification!</p>
-<divs class ="container"></divs>
-<select name="weapons" id="weapons">
-  <option value="scythe">Scythe</option>
-  <option value="orb">Orb</option>
-  <option value="hammer">Hammer</option>
-  <option value="rocketlance">Rocketlance</option>
-  <option value="katars">Katars</option>
-  <option value="sword">Sword</option>
-  <option value="greatsword">Greatsword</option>
-  <option value="spear">Spear</option>
-  <option value="canon">Canon</option>
-  <option value="guns">Guns</option>
-  <option value="bow">Bow</option>
-  <option value="axe">Axe</option>
-  <option value="gloves">Gloves</option>
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./dist/CSS/styles.css">
+    <title>Brawlhalla Legend Helper</title>
 
-</select>
-<!--de följande funktioner skapar två dropdown menus, en för vapen och en för stat-->
-<select name="stats" id="stats">
-  <option value= "highDmgWeapon" id="highDmgweapon">High Damage (7+)</option>
-  <option value= "mediumDmgWeapon" id="mediumDmgweapon">Medium Damage (4-6)</option>
-  <option value= "lowDmgWeapon" id="lowDmgweapon">Low Damage (1-3)</option>
-  <option value= "highDefWeapon" id="highDefweapon">High Defense (7+)</option>
-  <option value= "mediumDefWeapon" id="mediumDefweapon">Medium Defense (4-6)</option>
-  <option value= "lowDefWeapon" id="lowDefweapon">Low Defense (1-3)</option>
-  <option value= "highDxWeapon" id="highDxweapon">High Dexterity (7+)</option>
-  <option value= "mediumDxWeapon" id="mediumDxweapon">Medium Dexterity (4-6)</option>
-  <option value= "lowDxWeapon" id="lowDxweapon">Low Dexterity (1-3)</option>
-  <option value= "highSpWeapon" id="highSpweapon">High Speed (7+)</option>
-  <option value= "mediumSpWeapon" id="mediumSpweapon">Medium Speed (4-6)</option>
-  <option value= "lowSpWeapon" id="lowSpweapon">Low speed (1-3)</option>
-</select>
-<p id="Legend"></p>
-<!--med id ska jag ta fram functionnen och sedan lägga in value av den första droppdownen som 
-variabeln, då den första är vapen-->
+  </head>
 
-<Button id="functionButton">Calculate my optimal legend</Button>
-<script src="brawlhalla 1.1.js"></script>
-</body>
+  <body>
+
+    <main>
+    <section class="tool">
+      
+        <h2 class="overline">You can play</h2>
+        <h1 id="legendsDisplay">-</h1>
+
+        <div class="seperator"></div>
+
+        <h2 class="instruction">Please choose a weapon and a stat specification&#33;</h2>
+
+        <div class="weapons-container input-container">
+          <label for="weapons">Weapon</label>
+          <select name="weapons" id="weapons">
+            <option value="scythe">Scythe</option>
+            <option value="orb">Orb</option>
+            <option value="hammer">Hammer</option>
+            <option value="rocketlance">Rocketlance</option>
+            <option value="katars">Katars</option>
+            <option value="sword">Sword</option>
+            <option value="greatsword">Greatsword</option>
+            <option value="spear">Spear</option>
+            <option value="canon">Canon</option>
+            <option value="blasters">Blasters</option>
+            <option value="bow">Bow</option>
+            <option value="axe">Axe</option>
+            <option value="gauntlets">Gauntlets</option>
+          </select>
+        </div>
+
+        <div class="total-stat-container">
+
+          <div class="points-container input-container">
+            <label for="points">Points</label>
+            <select name="points" id="points">
+              <option value="high" id="high">High (6+)</option>
+              <option value="medium" id="medium">Medium (4-6)</option>
+              <option value="low" id="low">Low (1-3)</option>
+            </select>
+          </div>
+
+          <div class="stat-container input-container">
+            <label for="stats">Stat</label>
+            <select name="stats" id="stats">
+              <option value="strength" id="strength">Strength</option>
+              <option value="defense" id="defense">Defense</option>
+              <option value="dexterity" id="dexterity">Dexterity</option>
+              <option value="speed" id="speed">Speed</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button id="functionButton">Calculate Optimal Legend</button>
+
+        <h2 class="or overline">OR</h2>
+
+        <button id="randomLegend">Pick A Random Legend</button>
+    </section>
+
+    <section class="info">
+      <h2>Brawlhalla Legend Picker</h2>
+      <p>This tool is meant to help indecisive people make a decision picking a legend with a given weapon and certain stats. Simply pick the weapon you wish you play as well as the stat details you would like and the tool will give you the legends that have those things.</p>
+      <p>Alternatively, you could click the random button and get a random legend out of all the legends in Brawlhalla if you don't want to use the random option in brawl itself because you want to see what legend you get incase its a shit one or not</p>
+    </section>
+    </main>
+    <script src="./dist/JS/brawlhalla_1.2.js"></script>
+  </body>
+
 </html>
