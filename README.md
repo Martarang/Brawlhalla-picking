@@ -1,3 +1,5 @@
-# Brawlhalla-picking
-This is my messy build of a brawlhalla legend picking program
-I am currently looking for feedback and maybe some help to solve my issue with high defense stat.
+# Brawlhalla Legend Picker
+
+This is a tool meant to help people pick a legend based purely on their weapons and stats.
+
+Feedback is always appreciated and contributions are welcome, just make sure to read the CONTRIBUTING.md file first.
