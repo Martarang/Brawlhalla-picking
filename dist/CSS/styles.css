@@ -1,10 +1,11 @@
 :root {
-  --accent: #8bb31d;
+  --accent: #11274E;
   --white90: #f9fbf3;
   --sansFont: "Switzer", "Roboto";
   --bezier: cubic-bezier(0.32, 0.15, 0.09, 1);
   --ease: 300ms var(--bezier);
-  --transitionDelay: .05s
+  --transitionDelay: .05s;
+  --emphasisFont: "Lexend Deca";
 }
 
 html {
@@ -22,11 +23,11 @@ html {
 }
 
 ::-moz-selection {
-  background-color: #333d2c
+  background-color: #11274E
 }
 
 ::selection {
-  background-color: #333d2c
+  background-color: #11274E
 }
 
 h1 {
@@ -42,22 +43,33 @@ p {
   font: 400 clamp(12px, 5vw, 16px)/calc(1ex / 0.32) var(--sansFont)
 }
 
+/*
 .seperator {
   background-color: currentColor;
   height: 1px;
   margin-bottom: 1.5rem;
   opacity: .6
 }
+*/
 
-button,
-button::after,
-button::before {
+.background-image {
+  position: absolute;
+  height: 100vh;
+  z-index: -1;
+  background-image: url(../../assets/images/UIBackgroundBitmap.jpg);
+  min-width: 100vw;
+  background-repeat: no-repeat;
+}
+
+.btn,
+.btn::after,
+.btn::before {
   -webkit-transition: var(--ease);
   -o-transition: var(--ease);
   transition: var(--ease)
 }
 
-button {
+.btn {
   --BGColor: #222;
   font-size: clamp(.75rem, 5vw, .85rem);
   background-color: var(--BGColor);
@@ -65,12 +77,12 @@ button {
   padding: 1.5rem;
   cursor: pointer;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
   box-shadow: 0 2px 2px rgba(0, 0, 0, .2)
 }
 
-button::after {
+.btn::after {
   position: absolute;
   opacity: 0;
   content: " ➜";
@@ -82,18 +94,18 @@ button::after {
   transition-delay: var(--transitionDelay)
 }
 
-button:hover {
+.btn:hover {
   padding-right: 2.5rem
 }
 
-button:hover::after {
+.btn:hover::after {
   opacity: 1;
   -webkit-transform: translateX(1ch);
   -ms-transform: translateX(1ch);
   transform: translateX(1ch)
 }
 
-button:active {
+.btn:active {
   -webkit-transform: translateY(1px);
   -ms-transform: translateY(1px);
   transform: translateY(1px);
@@ -101,68 +113,86 @@ button:active {
   box-shadow: none
 }
 
-.overline {
-  font-size: 1rem
+.btn-primary {
+  --BGColor: #11274E;
+  --textColor: #E1EAF4;
 }
 
-.info h2 {
-  font-size: 2rem;
-  margin-bottom: .5rem
+#randomLegend {
+  --BGColor: none;
+  border: 1px solid currentColor;
+}
+
+.overline {
+  font-size: 1rem
 }
 
 main {
   display: -ms-grid;
   display: grid;
-  height: 100vh;
-  -ms-grid-columns: 2fr 1fr;
-  grid-template-columns: 2fr 1fr;
-  -ms-grid-rows: 1fr;
+  height: 90vh;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 0 10vw
-}
-
-main>:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1
-}
-
-main>:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2
+  align-items: start;
+  margin: 5vh 10vw;
 }
 
 .tool {
-  max-width: 30vw
+  max-width: 30vw;
+}
+
+.tile {
+  background-color: rgba(11,11,11,0.6);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  backdrop-filter: blur(8px);
 }
 
 #legendsDisplay {
-  font-family: "Lexend Deca";
+  font-family: var(--emphasisFont);
   margin-bottom: 1rem
 }
 
 h2.or {
   text-align: center;
-  margin: .25rem 0
+  margin: .5rem 0
 }
 
-.info p,
+.info__details,
 .input-container,
 .input-container label {
   margin-bottom: .25rem
 }
 
-.info h1,
-.instruction,
+.info__details,
+.info__title {
+  margin-right: 15vw;
+}
+
+.info__title {
+  font-family: var(--emphasisFont);
+  font-size: clamp(2.5rem, 5vmin, 3rem);
+  line-height: clamp(2.75rem, 6vmin, 3.25rem);
+}
+
+.instruction {
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.info__title,
 .weapons-container {
   margin-bottom: .5rem
 }
 
 select {
   padding: 1rem;
-  border-radius: .25rem
+  border-radius: .25rem;
+  background: transparent;
+}
+
+option {
+  background: black;
 }
 
 .input-container {
@@ -195,6 +225,33 @@ select {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1
+}
+
+.settings {
+  max-width: 30vw;
+}
+
+.settings button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+span.podium {
+}
+
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width:1300px) {
@@ -230,4 +287,5 @@ select {
   .tool {
     max-width: 90vw
   }
+
 }

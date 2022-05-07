@@ -13,17 +13,19 @@
 
   </head>
 
-  <body>
-
+  <body class="background-image">
+    <div ></div>
     <main>
-    <section class="tool">
+    <section class="tool tile">
       
+   <!--  
         <h2 class="overline">You can play</h2>
         <h1 id="legendsDisplay">-</h1>
 
         <div class="seperator"></div>
+   -->
 
-        <h2 class="instruction">Please choose a weapon and a stat specification&#33;</h2>
+        <h2 class="instruction">Pick A Weapon And Stats&#33;</h2>
 
         <div class="weapons-container input-container">
           <label for="weapons">Weapon</label>
@@ -67,18 +69,76 @@
 
         </div>
 
-        <button id="functionButton">Calculate Optimal Legend</button>
+        <button id="functionButton" class="btn btn-primary">Calculate My Optimal Legend</button>
 
         <h2 class="or overline">OR</h2>
 
-        <button id="randomLegend">Pick A Random Legend</button>
+        <button id="randomLegend" class="btn">Show Me A Random Legend</button>
     </section>
 
     <section class="info">
-      <h2>Brawlhalla Legend Picker</h2>
-      <p>This tool is meant to help indecisive people make a decision picking a legend with a given weapon and certain stats. Simply pick the weapon you wish you play as well as the stat details you would like and the tool will give you the legends that have those things.</p>
-      <p>Alternatively, you could click the random button and get a random legend out of all the legends in Brawlhalla if you don't want to use the random option in brawl itself because you want to see what legend you get incase its a shit one or not</p>
+      <h2 class="overline">You can play</h2>
+      <h1 id="legendsDisplay">-</h1>
+
+      <h2 class="info__title">Brawlhalla Legend Picker</h2>
+
+      <p class="info__details">This tool is meant to help indecisive people make a decision picking a legend with certain stats which they want. </p>
+      <p class="info__details">Simply pick the weapon and stats you wish to see in your legend and the tool will display all the legends which have those stats and weapons.
+      </p>
+      <p class="info__details">Alternatively, you could click the “Show Me A Random Legend” button to display a random legend out of all the legends in Brawlhalla incase you don’t want to use the random option built into the game itself.
+      </p>
+
     </section>
+
+    <section class="settings tile">
+
+      <label>Settings</label>
+
+      <div class="podium-setting setting">
+        <h2 class="setting__title">Podium</h2>
+        <div class="podium-options slider">
+
+          <button id="podiumPrev">
+		<!-- SVG BUTTON PREVIOUS GOES HERE -->
+	    <
+          </button>
+
+          <span class="podium" id="podium">Default</span>
+
+          <button id="podiumNext">
+		<!-- SVG BUTTON NEXT GOES HERE -->
+            >
+          </button>
+
+        </div>
+      </div>
+
+      <div class="stances-setting setting">
+        <h2 class="setting__title">Include Stances</h2>
+        <input type="checkbox" />
+      </div>
+
+      <div class="random-setting setting">
+        <h2 class="setting__title">Remove Legend From Random</h2>
+        <div class="podium-options slider">
+
+          <button id="podiumPrev">
+		<!-- SVG BUTTON PREVIOUS GOES HERE -->
+	    <
+          </button>
+
+          <span class="podium" id="podium">None</span>
+
+          <button id="podiumNext">
+		<!-- SVG BUTTON NEXT GOES HERE -->
+            >
+          </button>
+
+        </div>
+      </div>
+
+    </section>
+
     </main>
     <script src="./dist/JS/brawlhalla_1.2.js"></script>
   </body>
